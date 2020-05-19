@@ -8,12 +8,12 @@ import { Component, HostListener } from '@angular/core';
 export class NavbarComponent {
   @HostListener('window:resize', [])
   public onResize() {
-    this.isPhoneSize = window.innerWidth < 575;
+    this.isPhoneSize = window.innerWidth < 576;
     this.isBurgerOpen = !this.isPhoneSize ? false : this.isBurgerOpen;
   }
 
   isBurgerOpen: boolean = false;
-  isPhoneSize: boolean = window.innerWidth < 575;
+  isPhoneSize: boolean = window.innerWidth < 576;
 
   PAGES = [
     { name: 'Home' },

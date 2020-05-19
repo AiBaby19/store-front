@@ -2,6 +2,10 @@
 @import "../../styles/layout";
 @import "../../styles/colors";
 
+a {
+  color: inherit;
+}
+
 .navbar {
   width: 100vw;
   margin-top: 10px;

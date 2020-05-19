@@ -6,19 +6,21 @@
   </div>
   <div class="wrapper">
     <!-- <a class="navbar-brand" href="#">LOGO</a> -->
-    <ul class="inline-nav" *ngIf='!isPhoneSize || isBurgerOpen'>
+    <ul class="inline-nav" *ngIf="!isPhoneSize || isBurgerOpen">
       <span class="nav-list">
         <li class="ml-3" *ngFor="let page of PAGES; let i = index">
           <span *ngIf="i < 3">
-            {{ page.name }}
+            <a [routerLink]="'/' + page.name">{{ page.name }}</a>
           </span>
+          <span class="pl-3" *ngIf="i < 2 && !isPhoneSize">|</span>
         </li>
+
       </span>
       <span class="nav-list">
-        <li class="ml-3 search">
+        <li *ngIf="!isPhoneSize" class="ml-3 search">
           <app-search></app-search>
         </li>
-        <li class="mx-3">Contact</li>
+        <li class="mx-3"><a routerLink="/Contact">Contact</a></li>
       </span>
     </ul>
   </div>
