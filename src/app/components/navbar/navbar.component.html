@@ -1,0 +1,25 @@
+<nav class="toggled-navbar">
+  <div class="hamburger" (click)="toggleMenu()">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+  <div class="wrapper">
+    <!-- <a class="navbar-brand" href="#">LOGO</a> -->
+    <ul class="inline-nav" *ngIf='!isPhoneSize || isBurgerOpen'>
+      <span class="nav-list">
+        <li class="ml-3" *ngFor="let page of PAGES; let i = index">
+          <span *ngIf="i < 3">
+            {{ page.name }}
+          </span>
+        </li>
+      </span>
+      <span class="nav-list">
+        <li class="ml-3 search">
+          <app-search></app-search>
+        </li>
+        <li class="mx-3">Contact</li>
+      </span>
+    </ul>
+  </div>
+</nav>

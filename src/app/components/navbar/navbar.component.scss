@@ -1,0 +1,64 @@
+@import "../../styles/breakpoints";
+@import "../../styles/layout";
+@import "../../styles/colors";
+
+.navbar {
+  width: 100vw;
+  margin-top: 10px;
+}
+
+.wrapper {
+  width: $container;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+.inline-nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: $screen-sm-min) {
+  li {
+    cursor: pointer;
+  }
+
+  li:hover {
+    color: rgb(28, 28, 231);
+  }
+
+  .hamburger {
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 5%;
+    transform: translate(-5%, -50%);
+  }
+
+  .line {
+    width: 25px;
+    height: 4px;
+    background: $primaryColor;
+    margin: 5px;
+  }
+
+  .inline-nav {
+    all: unset;
+    float: right;
+    margin-top: 20px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    background: $greyColor;
+    color: $primaryColor;
+    width: 120px;
+    height: auto;
+    text-align: left;
+  }
+}
