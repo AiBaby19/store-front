@@ -16,8 +16,8 @@ export class NavbarComponent {
   isPhoneSize: boolean = window.innerWidth < 576;
 
   PAGES = [
-    { name: 'home' },
-    { name: 'info' },
+    { name: 'home', link: '' },
+    { name: 'about' },
     { name: 'cart' },
     { name: 'contact' },
   ];
@@ -25,7 +25,6 @@ export class NavbarComponent {
   constructor() {}
 
   toggleMenu() {
-    console.log(this.isBurgerOpen)
     this.isBurgerOpen = !this.isBurgerOpen;
   }
 }

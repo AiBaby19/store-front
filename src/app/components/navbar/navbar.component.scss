@@ -27,7 +27,17 @@ a {
   justify-content: space-between;
 }
 
+.padding-top {
+  padding-top: 5px;
+}
+
 @media only screen and (max-width: $screen-sm-min) {
+  nav ul {
+    position: absolute;
+    left: 15px;
+    margin-top: 45px;
+  }
+
   li {
     cursor: pointer;
   }
@@ -58,7 +68,7 @@ a {
 
   .nav-burger-list {
     flex-direction: column;
-    background: $primaryColor;
+    background: rgba(0, 0, 0, 0.897);
     color: white;
     width: 80px;
     height: auto;
@@ -67,9 +77,8 @@ a {
     padding: 0 5px;
   }
 
-  nav ul {
-    position: absolute;
-    left: 15px;
-    margin-top: 45px;
+  .padding-top {
+    padding-top: 0;
   }
+
 }
