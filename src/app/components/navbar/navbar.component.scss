@@ -2,6 +2,10 @@
 @import "../../styles/layout";
 @import "../../styles/colors";
 
+a {
+  color: inherit;
+}
+
 .navbar {
   width: 100vw;
   margin-top: 10px;
@@ -11,7 +15,7 @@
   width: $container;
 }
 
-.nav-list {
+.nav-burger-list {
   display: flex;
   flex-direction: row;
   list-style: none;
@@ -23,7 +27,17 @@
   justify-content: space-between;
 }
 
+.padding-top {
+  padding-top: 5px;
+}
+
 @media only screen and (max-width: $screen-sm-min) {
+  nav ul {
+    position: absolute;
+    left: 15px;
+    margin-top: 45px;
+  }
+
   li {
     cursor: pointer;
   }
@@ -33,18 +47,17 @@
   }
 
   .hamburger {
-    position: absolute;
     cursor: pointer;
-    right: 5%;
-    top: 5%;
-    transform: translate(-5%, -50%);
+    float: left;
+    margin-top: 15px;
+    z-index: 1;
   }
 
   .line {
     width: 25px;
     height: 4px;
     background: $primaryColor;
-    margin: 5px;
+    margin: 5px 0;
   }
 
   .inline-nav {
@@ -53,12 +66,19 @@
     margin-top: 20px;
   }
 
-  .nav-list {
+  .nav-burger-list {
     flex-direction: column;
-    background: $greyColor;
-    color: $primaryColor;
-    width: 120px;
+    background: rgba(0, 0, 0, 0.897);
+    color: white;
+    width: 80px;
     height: auto;
     text-align: left;
+    z-index: 1;
+    padding: 0 5px;
   }
+
+  .padding-top {
+    padding-top: 0;
+  }
+
 }
