@@ -16,17 +16,16 @@ export class NavbarComponent {
   isPhoneSize: boolean = window.innerWidth < 576;
 
   PAGES = [
-    { name: 'Home' },
-    { name: 'Info' },
-    { name: 'Cart' },
-    { name: 'Contact' },
+    { name: 'home' },
+    { name: 'info' },
+    { name: 'cart' },
+    { name: 'contact' },
   ];
 
-  constructor() {
-  }
+  constructor() {}
 
   toggleMenu() {
+    console.log(this.isBurgerOpen)
     this.isBurgerOpen = !this.isBurgerOpen;
   }
-
 }

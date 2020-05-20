@@ -4,24 +4,21 @@
     <div class="line"></div>
     <div class="line"></div>
   </div>
-  <div class="wrapper">
-    <!-- <a class="navbar-brand" href="#">LOGO</a> -->
-    <ul class="inline-nav" *ngIf="!isPhoneSize || isBurgerOpen">
-      <span class="nav-list">
-        <li class="ml-3" *ngFor="let page of PAGES; let i = index">
-          <span *ngIf="i < 3">
-            <a [routerLink]="'/' + page.name">{{ page.name }}</a>
-          </span>
-          <span class="pl-3" *ngIf="i < 2 && !isPhoneSize">|</span>
-        </li>
-
-      </span>
-      <span class="nav-list">
-        <li *ngIf="!isPhoneSize" class="ml-3 search">
-          <app-search></app-search>
-        </li>
-        <li class="mx-3"><a routerLink="/Contact">Contact</a></li>
-      </span>
-    </ul>
-  </div>
+  <!-- <a class="navbar-brand" href="#">LOGO</a> -->
+  <ul class="inline-nav" *ngIf="!isPhoneSize || isBurgerOpen">
+    <span class="nav-burger-list pt-2">
+      <li *ngFor="let page of PAGES; let i = index">
+        <span *ngIf="i < 3">
+          <a [routerLink]="['/', page.name]">{{ page.name | titlecase }}</a>
+        </span>
+        <span class="px-3 ml3" *ngIf="i < 2 && !isPhoneSize">|</span>
+      </li>
+    </span>
+    <span class="nav-burger-list pb-2">
+      <li *ngIf="!isPhoneSize" class="mr-3 search">
+        <app-search></app-search>
+      </li>
+      <li><a routerLink="/contact">Contact</a></li>
+    </span>
+  </ul>
 </nav>

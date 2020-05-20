@@ -15,7 +15,7 @@ a {
   width: $container;
 }
 
-.nav-list {
+.nav-burger-list {
   display: flex;
   flex-direction: row;
   list-style: none;
@@ -37,18 +37,17 @@ a {
   }
 
   .hamburger {
-    position: absolute;
     cursor: pointer;
-    right: 5%;
-    top: 5%;
-    transform: translate(-5%, -50%);
+    float: left;
+    margin-top: 15px;
+    z-index: 1;
   }
 
   .line {
     width: 25px;
     height: 4px;
     background: $primaryColor;
-    margin: 5px;
+    margin: 5px 0;
   }
 
   .inline-nav {
@@ -57,12 +56,20 @@ a {
     margin-top: 20px;
   }
 
-  .nav-list {
+  .nav-burger-list {
     flex-direction: column;
-    background: $greyColor;
-    color: $primaryColor;
-    width: 120px;
+    background: $primaryColor;
+    color: white;
+    width: 80px;
     height: auto;
     text-align: left;
+    z-index: 1;
+    padding: 0 5px;
+  }
+
+  nav ul {
+    position: absolute;
+    left: 15px;
+    margin-top: 45px;
   }
 }
