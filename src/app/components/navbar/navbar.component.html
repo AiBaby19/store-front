@@ -8,10 +8,10 @@
   <ul class="inline-nav" *ngIf="!isPhoneSize || isBurgerOpen">
     <span class="nav-burger-list pt-2">
       <li *ngFor="let page of PAGES; let i = index">
-        <span *ngIf="i < 3">
+        <span *ngIf="i < 4">
           <a [routerLink]="['/', page.name]">{{ page.name | titlecase }}</a>
         </span>
-        <span class="px-3 ml3" *ngIf="i < 2 && !isPhoneSize">|</span>
+        <span class="px-3 ml3" *ngIf="i < 3 && !isPhoneSize">|</span>
       </li>
     </span>
     <span class="nav-burger-list padding-top">

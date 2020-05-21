@@ -1,0 +1,27 @@
+:root {
+  --rowNum: 4;
+  --colNum: 5;
+  --gridHeight: 120px;
+  --wrapperH: 40px; // for demonstrating the use of CSS Variables
+}
+
+.list-wrapper {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+  justify-content: space-between;
+}
+
+.item-list {
+  list-style: none;
+}
+
+.item {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 991px) {
+  .list-wrapper {
+    justify-content: space-around;
+  }
+}

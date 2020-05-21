@@ -1,7 +1,6 @@
-<div class="products-page-layout">
-  <p>TITLE</p>
-  <div class="d-flex flex-row justify-content-between">
-    <app-products-menu></app-products-menu>
-    <app-item-list></app-item-list>
-  </div>
+<!-- <p class="page-title" id="title">{{ title }}</p> -->
+<div class="grid">
+  <div id="title">{{ title }}</div>
+  <app-products-menu id="sidebar"></app-products-menu>
+  <app-item-list id="products" [items]="items"></app-item-list>
 </div>
