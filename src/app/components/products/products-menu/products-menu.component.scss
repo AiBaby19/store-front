@@ -1,4 +1,31 @@
-.menu-list {
+@import "../../../styles/breakpoints";
+
+.menu-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
   list-style: none;
   text-align: left;
+}
+
+@media only screen and (max-width: $screen-md-min) {
+  .menu-wrapper {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    width: 300px;
+    justify-content: center;
+  }
+
+  .menu-item > li::after {
+    content: "|";
+    margin: 0 15px;
+  }
+
+  .menu-item:last-child > li::after {
+    content: "";
+    margin: 0;
+  }
 }
