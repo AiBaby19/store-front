@@ -1,13 +1,16 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Injectable } from '@angular/core';
+import {
+  Resolve,
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot
+  } from '@angular/router';
 
-@Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.scss']
+@Injectable({
+  providedIn: 'root'
 })
-export class ProductsComponent implements OnInit {
-  @Input() title: string;
+export class ItemsResolver implements Resolve<any> {
 
+// switch to http when api works
   items = [
     {
       title: 'Timeless Watch',
@@ -40,10 +43,10 @@ export class ProductsComponent implements OnInit {
         'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
     },
   ];
-
   constructor() { }
 
-  ngOnInit(): void {
+  resolve(route: ActivatedRouteSnapshot) {
+    const collectionType = route.data.type;
+    return this.items;
   }
-
 }
