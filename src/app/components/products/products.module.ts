@@ -7,7 +7,7 @@ import { ItemListModule } from './item-list/item-list.module';
 import { CollectionComponent } from './collections/collection.component';
 
 @NgModule({
-  declarations: [ProductsComponent, CollectionComponent],
+  declarations: [ProductsComponent],
   imports: [CommonModule, ProductsMenuModule, ItemListModule],
   exports: [ProductsComponent],
 })

@@ -1,0 +1,39 @@
+@import "../../../styles/breakpoints";
+
+.grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-rows: 100px auto;
+  grid-template-columns: 150px auto;
+  grid-template-areas:
+    "title title"
+    "sidebar products";
+}
+
+::ng-deep #title {
+  text-align: center;
+  position: relative;
+  font-size: 40px;
+  font-weight: lighter;
+  grid-area: title;
+  margin: 0 auto;
+  margin-left: -100px;
+}
+
+::ng-deep #sidebar {
+  grid-area: sidebar;
+}
+
+@media only screen and (max-width: $screen-md-min) {
+  .grid {
+    grid-template-rows: 30px auto;
+    grid-template-columns: auto;
+    grid-template-areas:
+      "sidebar"
+      "products";
+    grid-row-gap: 10px;
+  }
+  ::ng-deep #title {
+    margin-left: unset;
+  }
+}

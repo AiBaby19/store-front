@@ -8,6 +8,11 @@
 .menu-item {
   list-style: none;
   text-align: left;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  color: blue;
 }
 
 @media only screen and (max-width: $screen-md-min) {

@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./products-menu.component.scss'],
 })
 export class ProductsMenuComponent implements OnInit {
-  collections = [{ title: 'men' }, { title: 'woman' }, { title: 'unisex' }];
+  collections = [{ title: 'men' }, { title: 'women' }, { title: 'unisex' }];
 
   constructor() {}
 
