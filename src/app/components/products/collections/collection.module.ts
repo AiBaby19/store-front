@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-import { ProductsModule } from '../products.module';
 import { CollectionComponent } from './collection.component';
 import { ProductsMenuModule } from '../products-menu/products-menu.module';
 import { ItemsResolver } from 'src/app/resolvers/itemsResolver.service';
@@ -47,7 +46,6 @@ const ROUTES: Routes = [
     RouterModule,
     RouterModule.forChild(ROUTES),
     CommonModule,
-    ProductsModule,
     ProductsMenuModule,
   ],
 })
