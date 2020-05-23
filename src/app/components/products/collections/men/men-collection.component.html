@@ -1,2 +1,2 @@
 <div id="title">Men</div>
-<app-item-list id="products" [items]=items></app-item-list>
+<app-item-list id="products" (showItem)="viewItem($event)" [items]=items></app-item-list>

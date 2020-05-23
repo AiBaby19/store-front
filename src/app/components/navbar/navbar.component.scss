@@ -39,8 +39,6 @@ li:hover {
   nav ul {
     position: absolute;
     margin-top: 45px;
-    // left: calc(100% - 120px);
-    // left: 25%;
   }
 
   li {
@@ -71,7 +69,7 @@ li:hover {
     flex-direction: column;
     background: rgba(0, 0, 0, 0.897);
     color: white;
-    width: 80px;
+    width: 90px;
     height: auto;
     text-align: left;
     z-index: 1;

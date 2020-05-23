@@ -1,4 +1,7 @@
-<div class="grid">
-  <app-products-menu id="sidebar"></app-products-menu>
+<div [ngClass]="{ grid: !global.isOnProductPage }">
+  <app-products-menu
+    *ngIf="!global.isOnProductPage"
+    id="sidebar"
+  ></app-products-menu>
   <router-outlet></router-outlet>
 </div>

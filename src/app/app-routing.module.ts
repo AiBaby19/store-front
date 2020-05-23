@@ -7,6 +7,7 @@ const ROUTES: Routes = [
     redirectTo: '/home',
     pathMatch: 'full',
   },
+
   {
     path: 'home',
     loadChildren: () =>
@@ -15,7 +16,9 @@ const ROUTES: Routes = [
   {
     path: 'collections',
     loadChildren: () =>
-      import('./components/products/collections/collection.module').then((m) => m.CollectionModule),
+      import('./components/products/collections/collection.module').then(
+        (m) => m.CollectionModule
+      ),
   },
   {
     path: 'about',
@@ -34,6 +37,7 @@ const ROUTES: Routes = [
         (m) => m.ContactModule
       ),
   },
+
 ];
 
 @NgModule({
