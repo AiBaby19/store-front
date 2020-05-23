@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Item from 'src/app/models/item';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CollectionComponent } from '../collection.component';
 
 @Component({
   selector: 'app-women-collection',
@@ -10,9 +11,13 @@ import { ActivatedRoute } from '@angular/router';
 export class WomenCollectionComponent implements OnInit {
   items: Item[];
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private router: Router) {
     this.route.data.subscribe((data) => (this.items = data.items));
   }
+
+  // viewItem(id) {
+  //   this.router.navigate(['/', id])
+  // }
 
   ngOnInit(): void {}
 }

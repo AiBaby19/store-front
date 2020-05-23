@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CollectionComponent } from './collection.component';
 import { ProductsMenuModule } from '../products-menu/products-menu.module';
 import { ItemsResolver } from 'src/app/resolvers/itemsResolver.service';
+import { CollectionService } from 'src/app/services/collection.service';
 
 const ROUTES: Routes = [
   {
@@ -12,6 +13,7 @@ const ROUTES: Routes = [
     children: [
       {
         path: 'men',
+        // outlet: 'collections',
         loadChildren: () =>
           import('./men/men-collection.module').then(
             (m) => m.MenCollectionModule
@@ -21,6 +23,7 @@ const ROUTES: Routes = [
       },
       {
         path: 'women',
+        // outlet: 'collections',
         loadChildren: () =>
           import('./women/women-collection.module').then(
             (m) => m.WomenCollectionModule
@@ -30,6 +33,7 @@ const ROUTES: Routes = [
       },
       {
         path: 'unisex',
+        // outlet: 'collections',
         loadChildren: () =>
           import('./unisex/unisex-collection.module').then(
             (m) => m.UnisexCollectionModule
@@ -48,5 +52,6 @@ const ROUTES: Routes = [
     CommonModule,
     ProductsMenuModule,
   ],
+  providers: [CollectionService],
 })
 export class CollectionModule {}

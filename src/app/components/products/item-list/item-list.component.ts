@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import Item from 'src/app/models/item';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-item-list',
@@ -8,7 +9,13 @@ import Item from 'src/app/models/item';
 })
 export class ItemListComponent implements OnInit {
   @Input() items: Item[];
+  @Output() showItem: EventEmitter<number> = new EventEmitter<number>();
+
   constructor() {}
+
+  viewItem(id: number) {
+    this.showItem.emit(id);
+  }
 
   ngOnInit(): void {}
 }
