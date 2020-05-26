@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injector, Optional } from '@angular/core';
 import { CollectionService } from 'src/app/services/collection.service';
-import { Router, ActivatedRoute } from '@angular/router';
-import { globals } from '../../../globals/globals';
+import { DynamicStyleService } from 'src/app/services/dynamic-style.service';
 
 @Component({
   selector: 'app-collection',
@@ -9,13 +8,18 @@ import { globals } from '../../../globals/globals';
   styleUrls: ['./collection.component.scss'],
 })
 export class CollectionComponent implements OnInit {
-  // will call http products by title
-  global = globals;
-  constructor(private collectionService: CollectionService) {}
+  isOnProductPage: boolean;
+
+  constructor(
+    private collectionService: CollectionService,
+    @Optional() private DsService: DynamicStyleService
+  ) {}
+
+  ngOnInit(): void {
+    this.isOnProductPage = this.DsService.layoutConditionsStatus.isOnProductPage;
+  }
 
   viewProduct(id) {
     this.collectionService.viewItem(id);
   }
-
-  ngOnInit(): void {}
 }

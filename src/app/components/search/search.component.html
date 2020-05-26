@@ -1,1 +1,6 @@
-<input type="text" placeholder="Search" class="search" />
+<input
+  type="text"
+  placeholder="Search"
+  class="search"
+  [ngClass]="isMixedColors ? 'search-white ' : 'search-black'"
+/>

@@ -1,8 +1,26 @@
 .search {
   border: none;
+  background: transparent;
+}
+
+.search-white {
+  border-bottom: 1px solid white;
+}
+
+.search-black {
   border-bottom: 1px solid black;
 }
 
 .search::placeholder {
-  font-size: 14px;;
+  font-size: 14px;
+  color: white;
 }
+
+.search-black::placeholder {
+  color: black;
+}
+
+.search-white::placeholder {
+  color: white;
+}
+

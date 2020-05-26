@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import Item from 'src/app/models/item';
 import { CollectionComponent } from '../collection.component';
@@ -14,6 +14,9 @@ export class MenCollectionComponent extends CollectionComponent implements OnIni
 
   constructor(private route: ActivatedRoute, collectionService: CollectionService) {
     super(collectionService);
+    // this.renderer.addClass(document.body, 'gray-bg');
+
+    // this.renderer.addClass(document.body, 'gray-bg');
     this.route.data.subscribe((data) => (this.items = data.items));
   }
 
