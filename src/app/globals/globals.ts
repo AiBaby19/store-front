@@ -1,3 +1,4 @@
 export const globals = {
-  isOnProductPage: false
+  isOnProductPage: false,
+  isHomePage: false
 }

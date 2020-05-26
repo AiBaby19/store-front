@@ -1,8 +1,10 @@
 .search {
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
+  background: transparent;
 }
 
 .search::placeholder {
-  font-size: 14px;;
+  font-size: 14px;
+  color: white;
 }

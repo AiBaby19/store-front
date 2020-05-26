@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-cart',
@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  constructor() { }
+  constructor(private renderer: Renderer2) {
+    this.renderer.addClass(document.body, 'gray-bg');
+  }
 
   ngOnInit(): void {
   }

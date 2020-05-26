@@ -1,4 +1,6 @@
 @import './app/styles/layout';
+@import "./app/styles/colors";
+
 
 
 * {
@@ -12,7 +14,18 @@ html, body {
   font-family: "Inter", sans-serif;
 }
 
+
 .wrapper {
   margin: 0 auto;
   width: $container;
+}
+
+.gray-black-bg {
+  height: 100%;
+  background: linear-gradient(90deg, $gray  50%, $black 50%);
+  z-index: -1;
+}
+
+.gray-bg {
+  background: $gray;
 }

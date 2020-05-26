@@ -1,4 +1,9 @@
 @import "../../../styles/breakpoints";
+@import "../../../styles/colors";
+
+body {
+  background: blue !important;
+}
 
 .grid {
   margin-top: 30px;
