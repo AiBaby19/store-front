@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -6,17 +6,17 @@ import { Component, HostListener } from '@angular/core';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
+  @Input() isMixedColors: boolean;
+
   screenSize_md = 768;
   @HostListener('window:resize', [])
   public onResize() {
     this.isPhoneSize = window.innerWidth < this.screenSize_md;
     this.isBurgerOpen = !this.isPhoneSize ? false : this.isBurgerOpen;
   }
-  // screenSize = window.getComputedStyle(document.documentElement).getPropertyValue('--screen-md-min');
 
-
-  isBurgerOpen: boolean = false;
   isPhoneSize: boolean = window.innerWidth < this.screenSize_md;
+  isBurgerOpen: boolean = false;
 
   PAGES = [
     { name: 'home', link: '' },

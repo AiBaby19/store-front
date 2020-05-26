@@ -16,9 +16,9 @@
     </span>
     <span class="nav-burger-list padding-top">
       <li *ngIf="!isPhoneSize" class="mr-3 search">
-        <app-search></app-search>
+        <app-search [isMixedColors]="isMixedColors"></app-search>
       </li>
-      <li class="text-white"><a routerLink="/contact">Contact</a></li>
+      <li [ngClass]="isMixedColors ? 'white-text': 'black-text'"><a routerLink="/contact">Contact</a></li>
     </span>
   </ul>
 </nav>

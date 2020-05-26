@@ -7,7 +7,10 @@ import {
   AfterViewInit,
 } from '@angular/core';
 import { globals } from '../../../globals/globals';
-import { BackgroundChangeService } from 'src/app/services/background-change.service';
+import {
+  BackgroundChangeService,
+  DynamicStyleService,
+} from 'src/app/services/dynamic-style.service';
 
 @Component({
   selector: 'app-view-product',
@@ -17,15 +20,15 @@ import { BackgroundChangeService } from 'src/app/services/background-change.serv
 export class ViewProductComponent implements OnInit, OnDestroy {
   global = globals;
 
-  constructor(private bgChangeService: BackgroundChangeService) {}
+  constructor(private dSService: DynamicStyleService) {}
 
   ngOnInit(): void {
     this.adjustBGtoProductPage(true);
   }
 
   adjustBGtoProductPage(value) {
-    this.bgChangeService.changeBg({ isOnProductPage: value });
-    this.bgChangeService.emitVal();
+    this.dSService.changeBg({ isOnProductPage: value });
+    this.dSService.emitVal();
   }
 
   ngOnDestroy(): void {

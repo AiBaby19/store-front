@@ -1,6 +1,5 @@
 import { Component, Renderer2 } from '@angular/core';
-import { BackgroundChangeService } from './services/background-change.service';
-import { Observable, Subscription } from 'rxjs';
+import { DynamicStyleService } from './services/dynamic-style.service';
 
 @Component({
   selector: 'app-root',
@@ -8,34 +7,27 @@ import { Observable, Subscription } from 'rxjs';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  navMixedColors: boolean;
+
   constructor(
-    private backgroundChangeService: BackgroundChangeService,
+    private dSService: DynamicStyleService,
     private renderer: Renderer2
   ) {
-    this.backgroundChangeService.layoutChange.subscribe((value) => {
+    this.dSService.layoutChange.subscribe((value) => {
       this.backgroundChooser(value);
     });
   }
 
   backgroundChooser(updatedValue) {
     const { isHomePage, isOnProductPage } = updatedValue;
-    console.log(updatedValue)
 
     if (isHomePage || isOnProductPage) {
       this.renderer.removeClass(document.body, 'gray-bg');
       this.renderer.addClass(document.body, 'gray-black-bg');
+      this.navMixedColors = true;
     } else {
       this.renderer.addClass(document.body, 'gray-bg');
+      this.navMixedColors = false;
     }
-
-    // if (isHomePage || isOnProductPage) {
-    //   this.renderer.removeClass(document.body, 'gray-bg');
-    //   this.renderer.addClass(document.body, 'gray-black-bg');
-    // } else if (document.body.classList.contains('gray-black-bg')) {
-    //   this.renderer.removeClass(document.body, 'gray-black-bg');
-    //   this.renderer.addClass(document.body, 'gray-bg');
-    // } else {
-    //   this.renderer.addClass(document.body, 'gray-bg');
-    // }
   }
 }
