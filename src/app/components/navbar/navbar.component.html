@@ -18,7 +18,9 @@
       <li *ngIf="!isPhoneSize" class="mr-3 search">
         <app-search [isMixedColors]="isMixedColors"></app-search>
       </li>
-      <li [ngClass]="isMixedColors ? 'white-text': 'black-text'"><a routerLink="/contact">Contact</a></li>
+      <li [ngClass]="isMixedColors ? 'white-text' : 'black-text'">
+        <a routerLink="/contact">Contact</a>
+      </li>
     </span>
   </ul>
 </nav>

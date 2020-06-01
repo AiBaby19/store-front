@@ -23,6 +23,6 @@ export class DynamicStyleService {
   }
 
   emitVal() {
-    this.layoutChange.next(this.layoutConditionsStatus);
+    return this.layoutChange.next(this.layoutConditionsStatus);
   }
 }

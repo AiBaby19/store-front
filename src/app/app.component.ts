@@ -1,4 +1,4 @@
-import { Component, Renderer2 } from '@angular/core';
+import { Component, Renderer2, ChangeDetectorRef } from '@angular/core';
 import { DynamicStyleService } from './services/dynamic-style.service';
 
 @Component({
