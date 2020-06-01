@@ -1,4 +1,4 @@
-import { Component, OnInit, Injector, Optional } from '@angular/core';
+import { Component, OnInit, Optional } from '@angular/core';
 import { CollectionService } from 'src/app/services/collection.service';
 import { DynamicStyleService } from 'src/app/services/dynamic-style.service';
 
@@ -7,16 +7,15 @@ import { DynamicStyleService } from 'src/app/services/dynamic-style.service';
   templateUrl: './collection.component.html',
   styleUrls: ['./collection.component.scss'],
 })
-export class CollectionComponent implements OnInit {
+export class CollectionComponent extends DynamicStyleService implements OnInit {
   isOnProductPage: boolean;
 
-  constructor(
-    private collectionService: CollectionService,
-    @Optional() private DsService: DynamicStyleService
-  ) {}
+  constructor(private collectionService: CollectionService) {
+    super();
+  }
 
   ngOnInit(): void {
-    this.isOnProductPage = this.DsService.layoutConditionsStatus.isOnProductPage;
+    this.isOnProductPage = this.layoutConditionsStatus.isOnProductPage;
   }
 
   viewProduct(id) {

@@ -1,32 +1,17 @@
-import {
-  Component,
-  OnInit,
-  OnDestroy,
-  Renderer2,
-  ElementRef,
-  AfterViewInit,
-} from '@angular/core';
-import { globals } from '../../../globals/globals';
-import {
-  BackgroundChangeService,
-  DynamicStyleService,
-} from 'src/app/services/dynamic-style.service';
+import { Component, OnDestroy } from '@angular/core';
+import { DynamicStyleService } from 'src/app/services/dynamic-style.service';
 
 @Component({
   selector: 'app-view-product',
   templateUrl: './view-product.component.html',
   styleUrls: ['./view-product.component.scss'],
 })
-export class ViewProductComponent implements OnInit, OnDestroy {
-  global = globals;
-
-  constructor(private dSService: DynamicStyleService) {}
-
-  ngOnInit(): void {
+export class ViewProductComponent implements OnDestroy {
+  constructor(private dSService: DynamicStyleService) {
     this.adjustBGtoProductPage(true);
   }
 
-  adjustBGtoProductPage(value) {
+  adjustBGtoProductPage(value): void {
     this.dSService.changeBg({ isOnProductPage: value });
     this.dSService.emitVal();
   }
