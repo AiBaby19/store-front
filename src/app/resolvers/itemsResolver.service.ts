@@ -2,15 +2,14 @@ import { Injectable } from '@angular/core';
 import {
   Resolve,
   ActivatedRouteSnapshot,
-  RouterStateSnapshot
-  } from '@angular/router';
+  RouterStateSnapshot,
+} from '@angular/router';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ItemsResolver implements Resolve<any> {
-
-// switch to http when api works
+  // switch to http when api works
   items = [
     {
       id: 1,
@@ -18,6 +17,7 @@ export class ItemsResolver implements Resolve<any> {
       image: '../../../../assets/img/brown.png',
       details:
         'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+      price: '45',
     },
     {
       id: 2,
@@ -48,7 +48,7 @@ export class ItemsResolver implements Resolve<any> {
         'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
     },
   ];
-  constructor() { }
+  constructor() {}
 
   resolve(route: ActivatedRouteSnapshot) {
     const collectionType = route.data.type;

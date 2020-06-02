@@ -1,1 +1,15 @@
-<div class="wrapper"><p>view-product works!</p></div>
+<div class="wrapper">
+  <h1 class="title">{{ product.title }}</h1>
+  <div class="content">
+    <img class="image" src={{product.image}} alt="some" width="15" height="450"/>
+    <div class="info">
+      <hr class="hr-separator" />
+      <p class="details">{{ product.details }}</p>
+      <p class="price">{{ product['price'] }}$</p>
+      <div class="btns-div">
+        <button class="buy-now-btn btns" [routerLink]="['/cart', product]">Buy Now</button>
+        <button class="to-cart-btn btns">To Cart</button>
+      </div>
+    </div>
+  </div>
+</div>

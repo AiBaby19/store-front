@@ -13,7 +13,6 @@ const ROUTES: Routes = [
     children: [
       {
         path: 'men',
-        // outlet: 'collections',
         loadChildren: () =>
           import('./men/men-collection.module').then(
             (m) => m.MenCollectionModule
@@ -23,7 +22,6 @@ const ROUTES: Routes = [
       },
       {
         path: 'women',
-        // outlet: 'collections',
         loadChildren: () =>
           import('./women/women-collection.module').then(
             (m) => m.WomenCollectionModule
@@ -33,7 +31,6 @@ const ROUTES: Routes = [
       },
       {
         path: 'unisex',
-        // outlet: 'collections',
         loadChildren: () =>
           import('./unisex/unisex-collection.module').then(
             (m) => m.UnisexCollectionModule
