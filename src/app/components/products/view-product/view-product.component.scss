@@ -1,5 +1,101 @@
+@import '../../../styles/breakpoints';
+
 .wrapper {
-  display: absolute;
-  left: 0;
-  width: 100vw !important;
+  width: auto;
+  height: 100%;
+}
+
+.title {
+  text-align: center;
+  font-size: 80px;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+
+}
+
+.image {
+  width: 50%;
+  // margin: 30px;
+}
+
+.info {
+  width: 50%;
+  padding: 0 55px;
+  color: white;
+}
+
+.hr-separator {
+  background-color: #503b34;
+}
+
+.details {
+  margin-top: 45px;
+}
+
+.price {
+  text-align: center;
+  font-size: 40px;
+  margin: 15px 0;
+  font-weight: lighter;
+}
+
+.btns-div {
+  width: 100%;
+  margin-top: 25px;
+}
+
+.btns {
+  width: 50%;
+  height: 50px;
+  border: none;
+  font-size: 30px;
+  font-weight: lighter;
+}
+
+.buy-now-btn {
+  background-color: black;
+  color: white;
+}
+
+.to-cart-btn {
+  background-color: white;
+  color: black;
+}
+
+@media only screen and(max-width: $screen-md-min) {
+  .title {
+    font-size: 60px;;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  .btn-div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btns {
+    width: 100%;
+  }
+
+  .info {
+    padding: 20px;
+    width: 100%;
+    color: black;
+  }
+
+  .image {
+    width: 100%;
+  }
+
+  .buy-now-btn {
+    margin-bottom: 15px;
+  }
+
 }

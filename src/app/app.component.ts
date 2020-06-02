@@ -1,4 +1,4 @@
-import { Component, Renderer2, ChangeDetectorRef } from '@angular/core';
+import { Component, Renderer2, HostListener, OnInit } from '@angular/core';
 import { DynamicStyleService } from './services/dynamic-style.service';
 
 @Component({
@@ -6,7 +6,17 @@ import { DynamicStyleService } from './services/dynamic-style.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  windowSize: number;
+  breakPoint: number = 767;
+  bgConditions: any;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.windowSize = event.target.innerWidth;
+    this.chooseBackground();
+  }
+
   navMixedColors: boolean;
 
   constructor(
@@ -14,20 +24,43 @@ export class AppComponent {
     private renderer: Renderer2
   ) {
     this.dSService.layoutChange.subscribe((value) => {
-      this.backgroundChooser(value);
+      this.bgConditions = value;
+      this.chooseBackground();
     });
   }
 
-  backgroundChooser(updatedValue) {
-    const { isHomePage, isOnProductPage } = updatedValue;
+  ngOnInit() {
+    this.windowSize = window.innerWidth;
+    this.chooseBackground();
+  }
 
-    if (isHomePage || isOnProductPage) {
-      this.renderer.removeClass(document.body, 'gray-bg');
-      this.renderer.addClass(document.body, 'gray-black-bg');
-      this.navMixedColors = true;
+  chooseBackground() {
+    if (this.showMixedBG) {
+      this.makeMixedBG();
+      this.toggleNavColors(true);
     } else {
-      this.renderer.addClass(document.body, 'gray-bg');
-      this.navMixedColors = false;
+      this.makeGrayBG();
+      this.toggleNavColors(false);
     }
+  }
+
+  public get showMixedBG() {
+    const { isHomePage, isOnProductPage } = this.bgConditions;
+    return (
+      (isHomePage || isOnProductPage) && this.windowSize >= this.breakPoint
+    );
+  }
+
+  toggleNavColors(value) {
+    this.navMixedColors = value;
+  }
+
+  makeMixedBG() {
+    this.renderer.removeClass(document.body, 'gray-bg');
+    this.renderer.addClass(document.body, 'gray-black-bg');
+  }
+
+  makeGrayBG() {
+    this.renderer.addClass(document.body, 'gray-bg');
   }
 }

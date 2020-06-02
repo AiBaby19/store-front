@@ -5,7 +5,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   providedIn: 'root',
 })
 export class CollectionService {
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(private router: Router) {}
 
   viewItem(id: number) {
     this.router.navigate(['/collections/men/', id]);

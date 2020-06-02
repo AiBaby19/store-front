@@ -1,5 +1,7 @@
 <div class="list-wrapper">
   <ul *ngFor="let item of items" class="item-list">
-    <div class="item" (click)="viewItem(item.id)"><app-item [item]="item"></app-item></div>
+    <div class="item" (click)="viewItem(item.id)">
+      <app-item [item]="item"></app-item>
+    </div>
   </ul>
 </div>

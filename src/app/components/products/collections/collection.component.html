@@ -1,4 +1,4 @@
-<div [ngClass]="{ grid: !isOnProductPage }">
+<div [ngClass]="{ grid: !isOnProductPage }" class="w-100">
   <app-products-menu *ngIf="!isOnProductPage" id="sidebar"></app-products-menu>
   <router-outlet></router-outlet>
 </div>
