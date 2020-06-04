@@ -1,11 +1,11 @@
-<nav class="toggled-navbar">
+<nav class="toggled-navbar container">
   <div class="hamburger" (click)="toggleMenu()">
     <div class="line"></div>
     <div class="line"></div>
     <div class="line"></div>
   </div>
   <!-- <a class="navbar-brand" href="#">LOGO</a> -->
-  <ul class="inline-nav" *ngIf="!isPhoneSize || isBurgerOpen">
+  <ul class="inline-nav " *ngIf="!isPhoneSize || isBurgerOpen">
     <span class="nav-burger-list pt-2">
       <li *ngFor="let page of PAGES; let i = index">
         <span *ngIf="i < 4">
