@@ -7,15 +7,7 @@ a {
 }
 
 li:hover {
-  color: rgb(28, 28, 231);
-}
-
-.colorWhite {
-  color: white;
-}
-
-.colorBlack {
-  color: $black;
+  color: #503B34;
 }
 
 .navbar {
@@ -35,6 +27,7 @@ li:hover {
 
 .inline-nav {
   display: flex;
+  flex-direction: row;
   width: 100%;
   justify-content: space-between;
 }
@@ -42,6 +35,8 @@ li:hover {
 .padding-top {
   padding-top: 5px;
 }
+
+
 
 @media only screen and (max-width: $screen-md-min) {
   nav ul {
@@ -89,6 +84,6 @@ li:hover {
   }
 
   .padding-top {
-    padding-top: 5px;
+    padding-top: unset;
   }
 }

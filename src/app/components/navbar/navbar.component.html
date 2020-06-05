@@ -1,24 +1,24 @@
-<nav class="toggled-navbar">
+<nav class="toggled-navbar container">
   <div class="hamburger" (click)="toggleMenu()">
     <div class="line"></div>
     <div class="line"></div>
     <div class="line"></div>
   </div>
   <!-- <a class="navbar-brand" href="#">LOGO</a> -->
-  <ul class="inline-nav" *ngIf="!isPhoneSize || isBurgerOpen">
+  <ul class="inline-nav " *ngIf="!isPhoneSize || isBurgerOpen">
     <span class="nav-burger-list pt-2">
       <li *ngFor="let page of PAGES; let i = index">
         <span *ngIf="i < 4">
           <a [routerLink]="['/', page.name]">{{ page.name | titlecase }}</a>
         </span>
-        <span class="px-3 ml3" *ngIf="i < 3 && !isPhoneSize">|</span>
+        <span class="px-3 ml3 text-white" *ngIf="i < 3 && !isPhoneSize">|</span>
       </li>
     </span>
-    <span class="nav-burger-list padding-top">
-      <li *ngIf="!isPhoneSize" class="mr-3 search">
-        <app-search [isMixedColors]="isMixedColors"></app-search>
+    <span class="nav-burger-list">
+      <li *ngIf="!isPhoneSize" class="mr-3 search padding-top">
+        <app-search></app-search>
       </li>
-      <li [ngClass]="isMixedColors ? 'white-text' : 'black-text'">
+      <li class="white-text padding-top">
         <a routerLink="/contact">Contact</a>
       </li>
     </span>
