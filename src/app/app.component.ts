@@ -8,10 +8,10 @@ import { DynamicStyleService } from './services/dynamic-style.service';
 })
 export class AppComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
-    onResize(event) {
-      this.windowSize = event.target.innerWidth;
-      this.chooseBackground();
-    }
+  onResize(event) {
+    this.windowSize = event.target.innerWidth;
+    this.chooseBackground();
+  }
 
   windowSize: number;
   breakPoint: number = 767;
@@ -36,30 +36,30 @@ export class AppComponent implements OnInit {
   chooseBackground() {
     if (this.showMixedBG) {
       this.makeMixedBG();
-      this.toggleNavColors(true);
+      this.navMixedColors = true;
     } else {
       this.makeGrayBG();
-      this.toggleNavColors(false);
-    }
+     }
   }
 
   public get showMixedBG() {
-    return ( this.checkWhichPage && this.checkSize);
+    return this.checkWhichPage && this.checkSize;
   }
 
   public get checkWhichPage() {
     const { isHomePage, isOnProductPage } = this.bgConditions;
-    return isHomePage || isOnProductPage ;
+    return isHomePage || isOnProductPage;
   }
 
   public get checkSize() {
     return this.windowSize >= this.breakPoint;
   }
 
-
-  toggleNavColors(value) {
-    this.navMixedColors = value;
-  }
+  // toggleNavColors(value) {
+  //   if (this.checkSize && !this.checkWhichPage) {
+  //     this.navMixedColors = value;
+  //   }
+  // }
 
   makeMixedBG() {
     this.renderer.removeClass(document.body, 'gray-bg');
